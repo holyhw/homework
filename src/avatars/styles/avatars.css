@@ -1,1 +1,37 @@
-/* 여기에 스타일을 구현해 주세요 */
+img {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  float: left;
+}
+.female {
+  height: 64px;
+}
+.male {
+  height: 64px;
+  margin-top: 20px;
+}
+.female div {
+  display: inline-block;
+}
+.male div {
+  display: inline-block;
+}
+.activity {
+  background-color: #4cfe88;
+}
+.inactivity {
+  background-color: #dbdbdb;
+}
+
+.circle {
+  margin: 0px 1.43px;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  float: left;
+  position: relative;
+  right: 18.14px;
+  top: 47px;
+}
