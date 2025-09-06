@@ -1,3 +1,45 @@
 body {
   margin: 20px;
 }
+/* Naver Logo */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 입력서식 */
+.input {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  column-gap: 0.5em;
+
+  label {
+    flex: 0 0 auto;
+  }
+
+  input {
+    flex: 1 1 0;
+    border: 1px solid #dadada;
+    background: #fff;
+    padding: 0.125em 0.5em;
+    min-inline-size: 0;
+
+    font-size: 14px;
+    height: 45px;
+
+    &:focus-visible {
+      background: #e9f0fd;
+      outline: none;
+      border-color: #03cf5d;
+    }
+  }
+}
