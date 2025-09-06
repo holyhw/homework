@@ -1,7 +1,30 @@
-body {
-  margin: 20px;
+:root {
+  --base-font-size: 1rem;
+  --base-text-color: #121212;
+  --primary-color: #03cf5d;
+  --focus-bg-color: #e9f0fd;
+  --border-color: #dadada;
+  --error-color: #ff1414;
+  --silver-color: #999999;
+  --white-color: #fff;
+  --black-color: black;
 }
-/* Naver Logo */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--base-font-size);
+  color: var(--base-text-color);
+}
+
+.go-home {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.125rem;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -15,31 +38,212 @@ body {
   border-width: 0;
 }
 
-/* 입력서식 */
 .input {
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  column-gap: 0.5em;
+  flex-direction: column;
+  margin-bottom: 0.625rem;
 
   label {
     flex: 0 0 auto;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border-width: 0;
   }
 
   input {
-    flex: 1 1 0;
-    border: 1px solid #dadada;
-    background: #fff;
-    padding: 0.125em 0.5em;
-    min-inline-size: 0;
+    border: 1px solid var(--border-color);
+    background: var(--white-color);
+    padding: 0.875rem 1rem;
+    font-size: var(--base-font-size);
+    height: 3.125rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--base-text-color);
 
-    font-size: 14px;
-    height: 45px;
-
-    &:focus-visible {
-      background: #e9f0fd;
+    &:focus {
+      background: var(--focus-bg-color);
       outline: none;
-      border-color: #03cf5d;
+      border-color: var(--primary-color);
     }
+  }
+
+  p {
+    display: none;
+    font-size: 0.75rem;
+    margin-top: 0.3125rem;
+    color: var(--error-color);
+  }
+
+  input:not(:placeholder-shown):invalid + p {
+    display: block;
+  }
+
+  input:valid + p {
+    display: none;
+  }
+
+  &#id-input input[type='email']:not(:placeholder-shown):invalid + p {
+    display: block;
+  }
+
+  &#pw-input input[type='password']:not(:placeholder-shown):invalid + p {
+    display: block;
+  }
+}
+
+.login-button {
+  font-size: var(--base-font-size);
+  block-size: 2.8125rem;
+  inline-size: 100%;
+  color: var(--white-color);
+  background: var(--primary-color);
+  border: none;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  cursor: pointer;
+}
+
+.keep-login {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+
+  #keepLogin {
+    position: absolute;
+    opacity: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    &:focus-visible + .svg-wrapper {
+      outline: 2px solid var(--black-color);
+      outline-offset: 1px;
+      border-radius: 1px;
+    }
+
+    &:checked + .svg-wrapper {
+      svg:nth-child(1) {
+        visibility: hidden;
+      }
+      svg:nth-child(2) {
+        visibility: visible;
+      }
+    }
+  }
+
+  label.svg-wrapper {
+    display: inline-flex;
+    position: relative;
+
+    svg:nth-child(1) {
+      visibility: visible;
+    }
+
+    svg:nth-child(2) {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+
+  label:nth-child(3) {
+    margin-left: 0.3125rem;
+    color: var(--base-text-color);
+  }
+}
+
+.ip-security {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+
+  a {
+    text-decoration: none;
+    color: var(--base-text-color);
+  }
+
+  .toggle-btn {
+    padding-left: 0.4375rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &::after {
+      content: 'off';
+      color: var(--silver-color);
+      font-weight: 500;
+    }
+  }
+
+  #ipToggle {
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+
+    &:checked + .toggle-btn::after {
+      content: 'on';
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    &:focus-visible + .toggle-btn::after {
+      outline: 2px solid var(--base-text-color);
+      outline-offset: 0px;
+      border-radius: 1px;
+    }
+  }
+}
+
+.login-screen {
+  padding: 6.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 31.25rem;
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.bottom-options {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0.625rem;
+}
+
+@media (max-width: 767px) {
+  .pc-only {
+    display: none;
+  }
+
+  .login-screen {
+    max-width: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .login-screen {
+    max-width: 31.25rem;
+
+    form {
+      width: 31.25rem;
+    }
+  }
+
+  .bottom-options {
+    justify-content: space-between;
+    width: 31.25rem;
   }
 }
