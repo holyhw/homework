@@ -5,7 +5,7 @@
 /* 아이패드 프로  */
 .ipad-pro {
   block-size: 500px;
-  background: url(/src/apple/products/ipad_pro.jpeg) no-repeat;
+  background: url('../products/ipad_pro.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -61,7 +61,7 @@
 
   @media (width>=1024px) {
     block-size: 548px;
-    background: url(/src/apple/products/ipad_pro_wide.jpeg) no-repeat;
+    background: url('../products/ipad_pro_wide.jpeg') no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -75,7 +75,7 @@
 /* 아이패드 에어 */
 .ipad-air {
   block-size: 548px;
-  background: url(/src/apple/products/ipad_air.jpeg) no-repeat;
+  background: url('../products/ipad_air.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -131,7 +131,7 @@
 
   @media (width>=1024px) {
     block-size: 548px;
-    background: url(/src/apple/products/ipad_air_wide.jpeg) no-repeat;
+    background: url('../products/ipad_air_wide.jpeg') no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -146,7 +146,7 @@
 /* 아이폰15프로 */
 .iphone15-pro {
   block-size: 548px;
-  background: url(/src/apple/products/iphone15_pro.jpeg) no-repeat;
+  background: url('../products/iphone15_pro.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -196,7 +196,7 @@
 
   @media (width>=1024px) {
     block-size: 548px;
-    background: url(/src/apple/products/iphone15_pro_wide.jpeg) no-repeat;
+    background: url('../products/iphone15_pro_wide.jpeg') no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -208,7 +208,7 @@
 /* 아이폰15 */
 .iphone15 {
   block-size: 548px;
-  background: url(/src/apple/products/iphone15.jpeg) no-repeat;
+  background: url('../products/iphone15.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -265,7 +265,7 @@
 /* 애플워치 */
 .watch {
   block-size: 548px;
-  background: url(/src/apple/products/apple_watch.jpeg) no-repeat;
+  background: url('../products/apple_watch.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -320,7 +320,7 @@
 /* 맥북에어 */
 .macbook-air {
   block-size: 548px;
-  background: url(/src/apple/products/macbook_air.jpeg) no-repeat;
+  background: url('../products/macbook_air.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -375,7 +375,7 @@
 /* 에어팟프로 */
 .airpods-pro {
   block-size: 548px;
-  background: url(/src/apple/products/airpods_pro.jpeg) no-repeat;
+  background: url('../products/airpods_pro.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
