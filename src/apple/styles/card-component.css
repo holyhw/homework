@@ -1,3 +1,42 @@
-@import "./reset.css";
-@import "./theme.css";
-@import "./base.css";
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+.ipad-pro {
+  block-size: 548px;
+  background: url(/src/apple/products/ipad_pro.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  .ipad-pro-explain {
+    align-content: center;
+    margin-top: var(--extra-large-spacing);
+    text-align: center;
+
+    h2 {
+      font-size: var(--large-text);
+    }
+
+    p {
+      font-size: var(--base-text);
+    }
+  }
+  p {
+    font-size: var(--small-text);
+  }
+
+  .ipad-pro-detail {
+    display: flex;
+    justify-content: center;
+    gap: var(--small-spacing);
+    width: 100%;
+    margin-top: var(--small-spacing);
+  }
+  h2,
+  p,
+  a {
+    color: white;
+  }
+}
